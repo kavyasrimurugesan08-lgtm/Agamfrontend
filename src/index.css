@@ -1,0 +1,332 @@
+:root {
+  --primary-navy: #102D50;
+  --deep-navy: #081B32;
+  --royal-blue: #183B63;
+  --luxury-gold: #D6A32D;
+  --soft-gold: #F0C96A;
+  --light-gold: #FDF6E3;
+  --gold-glow: rgba(214, 163, 45, 0.35);
+  --silver-grey: #A7ADB1;
+  --white: #FFFFFF;
+  --bg-ivory: #F8F6F0;
+  --bg-sand: #F3EFE6;
+  --body-text: #263548;
+  --text-muted: #5C6E82;
+  --border-light: rgba(16, 45, 80, 0.12);
+  --border-gold: rgba(214, 163, 45, 0.45);
+  --card-shadow: 0 10px 30px -5px rgba(8, 27, 50, 0.08);
+  --card-shadow-hover: 0 20px 40px -10px rgba(8, 27, 50, 0.18);
+  --luxury-shadow: 0 15px 35px rgba(214, 163, 45, 0.15);
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-display: 'Cinzel', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-tamil: 'Mukta Malar', 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-ivory);
+  color: var(--body-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--deep-navy);
+  line-height: 1.25;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #D6A32D;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B38622;
+}
+
+/* Heritage Indian Pattern Utilities */
+.hero-pattern-bg {
+  background-color: #061527;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(214, 163, 45, 0.12) 1px, transparent 1.5px),
+    linear-gradient(45deg, transparent 48%, rgba(214, 163, 45, 0.05) 49%, rgba(214, 163, 45, 0.05) 51%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(214, 163, 45, 0.05) 49%, rgba(214, 163, 45, 0.05) 51%, transparent 52%);
+  background-size: 24px 24px, 48px 48px, 48px 48px;
+}
+
+.gold-diamond-border {
+  height: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    #D6A32D 0px,
+    #D6A32D 6px,
+    #081B32 6px,
+    #081B32 12px,
+    #F0C96A 12px,
+    #F0C96A 18px,
+    #081B32 18px,
+    #081B32 24px
+  );
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F0C96A 0%, #D6A32D 50%, #B8861B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tamil-script {
+  font-family: var(--font-tamil);
+  letter-spacing: 0.5px;
+}
+
+/* Golden buttons & highlights */
+.btn-gold {
+  background: linear-gradient(135deg, #D6A32D 0%, #C49222 100%);
+  color: #081B32;
+  font-weight: 700;
+  padding: 12px 26px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px rgba(214, 163, 45, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.btn-gold:hover {
+  background: linear-gradient(135deg, #E5B742 0%, #D6A32D 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(214, 163, 45, 0.45);
+}
+
+.btn-navy-outline {
+  border: 1px solid #D6A32D;
+  background: rgba(8, 27, 50, 0.6);
+  color: #F0C96A;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+.btn-navy-outline:hover {
+  background: #D6A32D;
+  color: #081B32;
+  transform: translateY(-2px);
+}
+
+/* Sticky Split View Layout */
+.sticky-split-container {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .sticky-split-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .sticky-split-sidebar {
+    position: static !important;
+  }
+}
+
+/* Badge styling */
+.badge-heritage {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(214, 163, 45, 0.6);
+  color: #F0C96A;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: rgba(16, 45, 80, 0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10B981;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px #10B981;
+}
+
+@keyframes blinkRoundInfo {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(214, 163, 45, 0.5);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(0.92);
+    box-shadow: 0 0 0 10px rgba(214, 163, 45, 0);
+  }
+}
+
+.info-round-blink {
+  animation: blinkRoundInfo 1s ease-in-out infinite;
+}
+
+@media (max-width: 900px) {
+  .header-heritage-unit {
+    display: none !important;
+  }
+}
+
+/* Infinite Marquees */
+@keyframes marqueeCircular {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRtoL {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeLtoR {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Motion Card Hover */
+.motion-card:hover {
+  transform: translateY(-6px);
+  border-color: #D4A63A !important;
+}
+.motion-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Instagram Card Hover */
+.insta-card:hover img {
+  transform: scale(1.08);
+}
+.insta-card:hover .insta-overlay {
+  opacity: 1 !important;
+}
+
+/* Mobile Bottom Navigation Bar */
+.mobile-bottom-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: #081D36;
+    border-top: 1px solid rgba(212, 166, 58, 0.4);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+    padding: 8px 12px 10px;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .mobile-nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #A7ADB1;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    padding: 4px 8px;
+  }
+  
+  .mobile-nav-link.active,
+  .mobile-nav-link:hover {
+    color: #E8C879;
+  }
+  
+  .mobile-nav-badge {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background-color: #D4A63A;
+    color: #081D36;
+    font-size: 0.65rem;
+    font-weight: 800;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+
